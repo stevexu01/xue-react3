@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Person from './Person'
+import App from './App'
 
 class Main extends Component {
     state = {
@@ -17,16 +18,23 @@ class Main extends Component {
 
     render() {
         return (
-            <div>
-                <h2>Person</h2>
-                {this.state.loading || !this.state.persons ? (
-                    <div> Loading... </div>
-                ) : (
-                <div>{ this.state.persons.map((p,i) => <Person key={i} profile={p}/>) }</div>
-                )
-                }
+            <>
+                {/* <div>
+                    <h2>Person</h2>
+                    {this.state.loading || !this.state.persons ? (
+                        <div> Loading... </div>
+                    ) : (
+                        <div>{ this.state.persons.map((p,i) => <Person key={i} profile={p}/>) }</div>
+                    )
+                    }
+                    
+                </div> */}
                 
-            </div>
+                <div>
+                    <h2>User</h2>
+                    <App/>
+                </div>
+            </>
         )
     }
 }
